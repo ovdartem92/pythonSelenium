@@ -4,9 +4,9 @@ import allure
 import pytest
 from allure_commons.types import AttachmentType
 
-from browser.driver_factory import DriverFactory
+from framework.browser.driver_factory import DriverFactory
 
-CONFIG_PATH = "config.json"
+CONFIG_PATH = "../config.json"
 DEFAULT_WAIT_TIME = 10
 SUPPORTED_BROWSERS = ["chrome", "firefox", "edge"]
 DEFAULT_WEBSITE = "http://www.google.com/"

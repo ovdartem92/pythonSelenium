@@ -4,12 +4,11 @@ import os
 
 from selenium.webdriver.support.events import AbstractEventListener
 
-
 cwd = os.getcwd()
-path_to_log = "C:\\Users\\Artsem.Audziyenka\\PycharmProjects\\pythonSelenium\\logs\\" + datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+log_name = datetime.datetime.now().strftime("%d-%m-%Y__%H-%M-%S")
+logs_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\logs\\" + log_name
 logging.basicConfig(
-    # logs file will be created in "tests" directory. Feel free to change the path or filename
-    filename=f"{path_to_log}.logs",
+    filename=f"{logs_path}.logs",
     format="%(asctime)s: %(levelname)s: %(message)s",
     level=logging.INFO
 )

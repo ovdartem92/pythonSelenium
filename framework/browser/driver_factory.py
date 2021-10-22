@@ -3,7 +3,7 @@ from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriv
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from listener.web_driver_listener import WebDriverListener
+from framework.listener.web_driver_listener import WebDriverListener
 from msedge.selenium_tools import EdgeOptions, Edge
 
 

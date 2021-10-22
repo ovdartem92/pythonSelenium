@@ -1,6 +1,6 @@
 {
   "browser": "chrome",
   "headless_mode": false,
-  "tested_page": "https://www.onliner.by/",
+  "tested_page": "https://www.yahoo.com/",
   "timeout": 10
 }
