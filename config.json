@@ -1,6 +1,6 @@
 {
-  "browser": "chrome",
+  "browser": "edge",
   "headless_mode": false,
-  "tested_page": "https://www.yahoo.com/",
+  "tested_page": "https://us.wildberries.ru/",
   "timeout": 10
 }

@@ -1,6 +1,7 @@
 .idea
-venv
 logs
+venv
+allure_report
 reports
 *.log
 .pytest_cache

@@ -1,15 +1,16 @@
 import json
-
+import os
+import sys
 import allure
 import pytest
 from allure_commons.types import AttachmentType
 
 from framework.browser.driver_factory import DriverFactory
 
-CONFIG_PATH = "../config.json"
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG_PATH = ROOT_DIR + "\\config.json"
 DEFAULT_WAIT_TIME = 10
 SUPPORTED_BROWSERS = ["chrome", "firefox", "edge"]
-DEFAULT_WEBSITE = "http://www.google.com/"
 
 
 @pytest.fixture(scope='session')
@@ -34,7 +35,7 @@ def wait_time_setup(config):
 
 @pytest.fixture(scope='session')
 def website_setup(config):
-    return config['tested_page'] if 'tested_page' in config else DEFAULT_WEBSITE
+    return config['tested_page'] if 'tested_page' in config else RuntimeError
 
 
 @pytest.fixture()

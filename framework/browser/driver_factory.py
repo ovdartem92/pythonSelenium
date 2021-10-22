@@ -4,7 +4,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from framework.listener.web_driver_listener import WebDriverListener
-from msedge.selenium_tools import EdgeOptions, Edge
 
 
 class DriverFactory:
@@ -30,13 +29,13 @@ class DriverFactory:
             )
             return driver
         elif browser == "edge":
-            options = EdgeOptions()
+            options = webdriver.EdgeOptions()
             options.use_chromium = True
             if headless_mode is True:
                 options.headless = True
             driver_path = EdgeChromiumDriverManager().install()
             driver = EventFiringWebDriver(
-                Edge(executable_path=driver_path, options=options),
+                webdriver.Edge(executable_path=driver_path, options=options),
                 WebDriverListener()
             )
             return driver

@@ -10,7 +10,7 @@ logs_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\log
 logging.basicConfig(
     filename=f"{logs_path}.logs",
     format="%(asctime)s: %(levelname)s: %(message)s",
-    level=logging.INFO
+    level=logging.ERROR
 )
 
 
