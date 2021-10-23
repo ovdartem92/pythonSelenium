@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 import allure
 import pytest
 from allure_commons.types import AttachmentType
@@ -35,7 +34,7 @@ def wait_time_setup(config):
 
 @pytest.fixture(scope='session')
 def website_setup(config):
-    return config['tested_page'] if 'tested_page' in config else RuntimeError
+    return config['tested_page'] if 'tested_page' in config else Exception("Should be url in config file")
 
 
 @pytest.fixture()
@@ -44,7 +43,7 @@ def setup(request, config):
     driver.implicitly_wait(config["timeout"])
     request.cls.driver = driver
     before_failed = request.session.testsfailed
-    if config["browser"] == "firefox":
+    if config["browser"] is not None:
         driver.maximize_window()
     yield
     if request.session.testsfailed != before_failed:

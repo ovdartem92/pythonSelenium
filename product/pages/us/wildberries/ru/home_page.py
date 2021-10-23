@@ -1,10 +1,9 @@
-from product.pages.base_page import BasePage
 import allure
-from selenium.webdriver.common.by import By
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+
+from product.pages.base_page import BasePage
+
 
 class HomePage(BasePage):
     def __init__(self, driver):
@@ -23,7 +22,8 @@ class HomePage(BasePage):
     @allure.step("[Wildberries Home Page] Click I agree button")
     def click_agree_button(self):
         button = self.driver.find_element(By.XPATH, "//button[text()='I agree']")
-        button.click()
+        if button.is_enabled():
+            button.click()
 
     @allure.step("[Wildberries Home Page] Choose staff by name")
     def choose_product_category(self, product_category):

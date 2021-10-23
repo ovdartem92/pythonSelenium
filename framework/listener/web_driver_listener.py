@@ -1,16 +1,21 @@
-import logging
 import datetime
+import logging
 import os
+import shutil
 
 from selenium.webdriver.support.events import AbstractEventListener
 
-cwd = os.getcwd()
-log_name = datetime.datetime.now().strftime("%d-%m-%Y__%H-%M-%S")
-logs_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\logs\\" + log_name
+from framework.utils.utils import get_project_root
+
+LOG_NAME = datetime.datetime.now().strftime("%d-%m-%Y__%H-%M-%S")
+REPORT_PATH = rf"{get_project_root()}" + "\\report\\"
+if os.path.exists(REPORT_PATH):
+    shutil.rmtree(REPORT_PATH)
+os.mkdir(REPORT_PATH)
 logging.basicConfig(
-    filename=f"{logs_path}.logs",
+    filename=f"{REPORT_PATH + LOG_NAME}.logs",
     format="%(asctime)s: %(levelname)s: %(message)s",
-    level=logging.ERROR
+    level=logging.INFO
 )
 
 

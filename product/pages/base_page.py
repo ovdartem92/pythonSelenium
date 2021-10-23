@@ -1,8 +1,9 @@
+from abc import abstractmethod
+
 import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-from abc import abstractmethod
 
 
 class BasePage:
@@ -23,12 +24,11 @@ class BasePage:
     @allure.step("[Navigation Panel] Click user menu")
     def click_user_menu(self):
         button = self.driver.find_element(By.XPATH, "//button[@class='user-menu__btn']")
-        button.click()    \
+        button.click()
 
     @allure.step("[Navigation Panel] Click logo")
-    def click_user_menu(self):
+    def click_logo(self):
         button = self.driver.find_element(By.XPATH, "//a[@class='header__logo']")
-
         button.click()
 
     @allure.step("[Navigation Panel] Click cart")

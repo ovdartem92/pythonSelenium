@@ -15,7 +15,7 @@ class Button(CommonPageElement):
         try:
             self.driver.find_element_by_xpath(self.locator).click()
         except StaleElementReferenceException:
-            NotImplemented
+            pass
 
     def get_text(self):
         WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, self.locator)))
