@@ -1,7 +1,7 @@
 import allure
-from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 
+from framework.ui.components.button import Button
 from product.pages.base_page import BasePage
 
 
@@ -21,14 +21,10 @@ class HomePage(BasePage):
 
     @allure.step("[Wildberries Home Page] Click I agree button")
     def click_agree_button(self):
-        button = self.driver.find_element(By.XPATH, "//button[text()='I agree']")
-        if button.is_enabled():
-            button.click()
+        button = Button(self.driver, By.XPATH, "//button[text()='I agree']")
+        button.click()
 
-    @allure.step("[Wildberries Home Page] Choose staff by name")
+    @allure.step("[Wildberries Home Page] Choose product category by name")
     def choose_product_category(self, product_category):
-        button = self.driver.find_element(By.XPATH, f"//li/span[text()='{product_category}']")
-        try:
-            button.click()
-        except StaleElementReferenceException:
-            pass
+        button_with_product_name = Button(self.driver, By.XPATH, f"//li/span[text()='{product_category}']")
+        button_with_product_name.click()

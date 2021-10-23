@@ -1,12 +1,17 @@
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
 from ..components.common_page_element import CommonPageElement
 
 
 class TextField(CommonPageElement):
-    def __init__(self, driver, locator):
-        super().__init__(driver, locator)
+    def __init__(self, driver, locator_type, locator):
+        super().__init__(driver, locator_type, locator)
 
     def type(self, text):
-        self.driver.find_element_by_xpath(self.locator).send_keys(text)
+        WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((self.locator_type, self.locator)))
+        self.driver.find_element(self.locator_type, self.locator).send_keys(text)
 
     def clear(self):
-        self.driver.find_element_by_xpath(self.locator).clear()
+        WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((self.locator_type, self.locator)))
+        self.driver.find_element(self.locator_type, self.locator).clear()

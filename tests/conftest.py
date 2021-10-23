@@ -1,14 +1,14 @@
 import json
-import os
+
 import allure
 import pytest
 from allure_commons.types import AttachmentType
 
 from framework.browser.driver_factory import DriverFactory
+from framework.utils.utils import get_project_root
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CONFIG_PATH = ROOT_DIR + "\\config.json"
-DEFAULT_WAIT_TIME = 10
+CONFIG_PATH = f"{get_project_root()}" + r"\config.json"
+DEFAULT_WAIT_TIME = 5
 SUPPORTED_BROWSERS = ["chrome", "firefox", "edge"]
 
 
