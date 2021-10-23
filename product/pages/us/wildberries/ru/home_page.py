@@ -1,7 +1,7 @@
 import allure
 from selenium.webdriver.common.by import By
 
-from framework.ui.components.button import Button
+from framework.ui.components.wrappers.button import Button
 from product.pages.base_page import BasePage
 
 

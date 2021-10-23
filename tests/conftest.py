@@ -7,7 +7,7 @@ from allure_commons.types import AttachmentType
 from framework.browser.driver_factory import DriverFactory
 from framework.utils.utils import get_project_root
 
-CONFIG_PATH = f"{get_project_root()}" + r"\config.json"
+CONFIG_PATH = f"{get_project_root()}\\config.json"
 DEFAULT_WAIT_TIME = 5
 SUPPORTED_BROWSERS = ["chrome", "firefox", "edge"]
 

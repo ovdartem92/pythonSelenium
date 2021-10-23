@@ -2,7 +2,7 @@ from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from ..components.common_page_element import CommonPageElement
+from framework.ui.components.common_page_element import CommonPageElement
 
 
 class Button(CommonPageElement):

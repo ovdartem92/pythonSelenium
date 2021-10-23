@@ -8,7 +8,7 @@ from selenium.webdriver.support.events import AbstractEventListener
 from framework.utils.utils import get_project_root
 
 LOG_NAME = datetime.datetime.now().strftime("%d-%m-%Y__%H-%M-%S")
-REPORT_PATH = rf"{get_project_root()}" + "\\report\\"
+REPORT_PATH = rf"{get_project_root()}\\report\\"
 if os.path.exists(REPORT_PATH):
     shutil.rmtree(REPORT_PATH)
 os.mkdir(REPORT_PATH)
