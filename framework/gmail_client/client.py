@@ -110,4 +110,4 @@ def delete_all_messages():
 
 
 if __name__ == '__main__':
-    delete_all_messages()
+    print_label()
