@@ -5,9 +5,10 @@
 4. Web Driver Factory
 5. Gmail Client
 6. Wed Driver Listener
-7. Page object, factory patterns
+7. Page object, Factory patterns
 8. User model
-9. Config.json with customize parameters (Headless mode, Browser Type, Timeout)
+9. Wrappers to Web Element
+10. Config.json with customize parameters (Headless mode, Browser Type, Timeout)
 
 ## Run test
 Firstly you should install all dependency from requirements.txt
