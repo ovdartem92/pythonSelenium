@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from product.pages.init_page import InitPage
+from product.pages.init_page import InitAppPages
 
 
 @pytest.mark.usefixtures("setup")
@@ -11,6 +11,6 @@ class TestHomePageOpened:
     @allure.description("Open home page, check that page is opened")
     @allure.severity(severity_level="CRITICAL")
     def test_open_home_page(self, config):
-        app = InitPage(self.driver)
+        app = InitAppPages(self.driver)
         app.home_page.open_page(config)
         app.home_page.check_home_page_opened(config)

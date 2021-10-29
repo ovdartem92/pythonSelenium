@@ -7,7 +7,7 @@ from product.pages.us.wildberries.ru.product_page import ProductPage
 from product.pages.us.wildberries.ru.components.navigate_bar import NavigateBar
 
 
-class InitPage:
+class InitAppPages:
     def __init__(self, driver):
         if driver is None:
             driver = webdriver.Chrome(ChromeDriverManager().install())

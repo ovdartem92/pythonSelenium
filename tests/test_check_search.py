@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from product.pages.init_page import InitPage
+from product.pages.init_page import InitAppPages
 
 
 @pytest.mark.usefixtures("setup", "website_setup")
@@ -13,7 +13,7 @@ class TestCheckSearch:
     @allure.description("Open home page, type text to search field, check that search result is not None")
     @allure.severity(severity_level="NORMAL")
     def test_check_search(self, config):
-        app = InitPage(self.driver)
+        app = InitAppPages(self.driver)
         app.home_page.open_page(config)
         app.home_page.click_agree_button()
         app.home_page.check_home_page_opened(config)

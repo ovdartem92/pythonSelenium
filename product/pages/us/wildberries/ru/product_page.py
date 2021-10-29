@@ -19,6 +19,21 @@ class ProductPage(BasePage):
         return product_brand_field.text
 
     @allure.step("[Wildberries Product Page] Click add to cart")
-    def click_add_to_cart(self):
+    def add_to_cart(self):
         button = Button(self.driver, By.XPATH, "//button[text()='Add to the cart']")
         button.click()
+
+    @allure.step("[Wildberries Product Page] Select size")
+    def select_size(self, size):
+        button = Button(self.driver, By.XPATH, f"//ul[contains(@class,'size-list')]/li[text()='{size}']")
+        button.click()
+
+    @allure.step("[Wildberries Product Page] Check confirm message 'Product added to cart'")
+    def check_confirm_message(self):
+        element = self.driver.find_element(By.XPATH, "//span[text()='Product added to cart']")
+        element.is_displayed()
+
+    @allure.step("[Wildberries Product Page] Get basket items")
+    def get_basket_items(self):
+        elements = self.driver.find_elements(By.XPATH, "//div[@class='basket-list']/div")
+        return elements

@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from product.pages.init_page import InitPage
+from product.pages.init_page import InitAppPages
 
 
 @pytest.mark.usefixtures("setup")
@@ -14,7 +14,7 @@ class TestChooseProductCategory:
                         "check that the title on page is Clothes")
     @allure.severity(severity_level="CRITICAL")
     def test_choose_product_category(self, config):
-        app = InitPage(self.driver)
+        app = InitAppPages(self.driver)
         expected_product_category = "Clothes"
         app.home_page.open_page(config)
         app.home_page.click_agree_button()
