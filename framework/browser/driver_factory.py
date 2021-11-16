@@ -9,8 +9,18 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 from framework.listener.web_driver_listener import WebDriverListener
 
+"""
+This class helps us to get the browser object. 
+This class has only one static method.
+"""
+
 
 class DriverFactory:
+    """
+    This method helps us to get instance of browser.
+    You should pass two parameters: the first - the browser type in string format
+    the second - the headless mod in the boolean format
+    """
     @staticmethod
     def get_driver(browser, headless_mode=False) -> EventFiringWebDriver:
         if browser == "chrome":
@@ -18,10 +28,7 @@ class DriverFactory:
             service = ServiceChrome(executable_path=ChromeDriverManager().install())
             if headless_mode is True:
                 options.add_argument("--headless")
-            driver = EventFiringWebDriver(
-                webdriver.Chrome(service=service, options=options),
-                WebDriverListener()
-            )
+            driver = EventFiringWebDriver(webdriver.Chrome(service=service, options=options), WebDriverListener())
             return driver
         elif browser == "firefox":
             options = webdriver.FirefoxOptions()

@@ -7,6 +7,10 @@ from selenium.webdriver.support.events import AbstractEventListener
 
 from framework.utils.utils import get_project_root
 
+'''
+This class monitors the actions of the web driver and logs it.
+'''
+
 LOG_NAME = datetime.datetime.now().strftime("%d-%m-%Y__%H-%M-%S")
 REPORT_PATH = rf"{get_project_root()}\\report\\"
 if os.path.exists(REPORT_PATH):

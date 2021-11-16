@@ -12,6 +12,10 @@ from googleapiclient.discovery import build
 
 from framework.utils.utils import get_project_root
 
+"""
+This class is required for working with Google mail.
+"""
+
 CONFIG_PATH = fr"{get_project_root()}\\framework\\gmail_client\\"
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://mail.google.com/']
@@ -19,8 +23,8 @@ SCOPES = ['https://mail.google.com/']
 
 @allure.step("[Gmail Client] Authorize an gmail, return client")
 def __authorize():
-    """Shows basic usage of the Gmail API.
-    Lists the user's Gmail labels.
+    """
+    Shows basic usage of the Gmail API.
     """
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
@@ -45,6 +49,9 @@ def __authorize():
 
 @allure.step("[Gmail Client] Print label")
 def print_label():
+    """
+    Print to the console list the user's Gmail labels.
+    """
     service = __authorize()
     results = service.users().labels().list(userId='me').execute()
     labels = results.get('labels', [])
@@ -59,6 +66,9 @@ def print_label():
 
 @allure.step("[Gmail Client] Get message by subject")
 def get_message_by_subject(subject_message):
+    """
+    Find message by subject and return object with subject and body
+    """
     service = __authorize()
     result = service.users().messages().list(userId='me').execute()
     messages = result.get('messages')
@@ -97,6 +107,9 @@ def get_message_by_subject(subject_message):
 
 @allure.step("[Gmail Client] Delete all messages")
 def delete_all_messages():
+    """
+    Delete all messages in gmail
+    """
     service = __authorize()
     result = service.users().messages().list(userId='me').execute()
     messages = result.get('messages')
