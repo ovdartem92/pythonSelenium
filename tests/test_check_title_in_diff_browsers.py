@@ -2,7 +2,7 @@ import allure
 import pytest
 
 from framework.browser.driver_factory import DriverFactory
-from product.pages.init_page import InitAppPages
+from product.pages.init_app import InitAppPages
 
 
 @pytest.mark.smoke

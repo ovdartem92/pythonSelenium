@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from product.pages.init_page import InitAppPages
+from product.pages.init_app import InitAppPages
 
 
 @pytest.mark.usefixtures("setup")
