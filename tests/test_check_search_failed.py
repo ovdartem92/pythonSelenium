@@ -16,9 +16,8 @@ class TestCheckSearch:
     def test_check_search(self, config):
         app = InitAppPages(self.driver)
         app.home_page.open_page(config)
-        app.home_page.click_agree_button()
         app.home_page.check_home_page_opened(config)
         app.navigate_bar.type_text_to_search("Nike")
         app.navigate_bar.type_text_to_search("\n")
         search_result = app.catalog_page.get_search_results()
-        assert search_result is not None
+        assert search_result is None

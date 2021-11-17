@@ -5,7 +5,7 @@ from product.pages.init_page import InitAppPages
 
 
 @pytest.mark.smoke
-@pytest.mark.usefixtures("setup", "website_setup")
+@pytest.mark.usefixtures("setup")
 class TestOpenFirstSearchResult:
     @allure.epic("Wildberries Trainee")
     @allure.title("Open first search result and check product brand")
@@ -16,7 +16,6 @@ class TestOpenFirstSearchResult:
         app = InitAppPages(self.driver)
         expected_product_name = "Nike"
         app.home_page.open_page(config)
-        app.home_page.click_agree_button()
         app.navigate_bar.type_text_to_search(expected_product_name)
         app.navigate_bar.type_text_to_search("\n")
         search_result = app.catalog_page.get_search_results()

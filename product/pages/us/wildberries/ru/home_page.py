@@ -12,6 +12,7 @@ class HomePage(BasePage):
     @allure.step("[Wildberries Home Page] Open home page")
     def open_page(self, config):
         self.driver.get(config["tested_page"])
+        self.click_agree_button()
 
     @allure.step("[Wildberries Home Page] Check that home page opened")
     def check_home_page_opened(self, config):
@@ -28,3 +29,9 @@ class HomePage(BasePage):
     def choose_product_category(self, product_category):
         button_with_product_name = Button(self.driver, By.XPATH, f"//li/span[text()='{product_category}']")
         button_with_product_name.click()
+
+    @allure.step("[Wildberries Home Page] Choose product category by name")
+    def get_title(self):
+        title = self.driver.title
+        return title
+

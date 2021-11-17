@@ -8,8 +8,7 @@ from product.pages.init_page import InitAppPages
 class TestChooseProductCategory:
     @allure.epic("Wildberries Trainee")
     @allure.title("Check that user can enter to Clothes product category")
-    @allure.testcase("https://goldcast.atlassian.net/browse/AM-468",
-                     "Change product category")
+    @allure.testcase("https://goldcast.atlassian.net/browse/AM-468", "Change product category")
     @allure.description("Open home page, choose product category to For Women > Clothes, "
                         "check that the title on page is Clothes")
     @allure.severity(severity_level="CRITICAL")
@@ -17,7 +16,6 @@ class TestChooseProductCategory:
         app = InitAppPages(self.driver)
         expected_product_category = "Clothes"
         app.home_page.open_page(config)
-        app.home_page.click_agree_button()
         app.home_page.check_home_page_opened(config)
         app.navigate_bar.click_burger_menu()
         app.home_page.choose_product_category("For women")

@@ -16,7 +16,6 @@ class TestAddProductToCart:
         expected_product_name = "Nike"
 
         app.home_page.open_page(config)
-        app.home_page.click_agree_button()
         app.navigate_bar.type_text_to_search(expected_product_name)
         app.navigate_bar.type_text_to_search("\n")
         app.catalog_page.click_to_search_result_by_number_of_search(app.catalog_page.get_search_results(), 0)
