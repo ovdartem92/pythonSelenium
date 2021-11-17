@@ -6,7 +6,7 @@ from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriv
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-
+from framework.utils.utils import get_project_root
 from framework.listener.web_driver_listener import WebDriverListener
 
 """
@@ -34,10 +34,12 @@ class DriverFactory:
             return driver
         elif browser == "firefox":
             options = webdriver.FirefoxOptions()
-            service = ServiceFirefox(executable_path=GeckoDriverManager().install())
+            service = ServiceFirefox(executable_path=GeckoDriverManager().install(), log_path=f"{get_project_root()}\\report\\geckodriver.log")
             if headless_mode is True:
                 options.headless = True
-            driver = EventFiringWebDriver(webdriver.Firefox(service=service, options=options), WebDriverListener())
+            driver = EventFiringWebDriver(
+                webdriver.Firefox(service=service, options=options),
+                WebDriverListener())
             return driver
         elif browser == "edge":
             options = webdriver.EdgeOptions()
