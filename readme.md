@@ -10,13 +10,25 @@
 9. Wrappers to Web Element
 10. Config.json with customize parameters (Headless mode, Browser Type, Timeout)
 
-## Run test
-Firstly you should install all dependency from requirements.txt
+## Set-up environment
+Install python 3.9 https://www.python.org/downloads/release/python-390/
+
+Install some development environment, e.g. PyCharm https://www.jetbrains.com/pycharm/download
+
+Clone this project via IDE.
+
+![img_1.png](manual/img.png)
+![img_2.png](manual/img_2.png)
+
+Install all dependency from requirements.txt. Command line can be opened by pressing keys: **Alt + F12**
+
+Type to command line
 ```
 pip install -r requirements.txt
 ```
-
-After type to command line
+![img_4.png](manual/img_4.png)
+## Run test
+Type to command line
 ```
 py.test
 ```
@@ -24,7 +36,6 @@ py.test
 ```
 py.test --alluredir report\allure
 ```
-
 ## Get report: 
 ```
 allure serve report\allure
