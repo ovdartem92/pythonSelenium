@@ -41,7 +41,9 @@ def website_setup(config):
 def setup(request, config):
     driver = DriverFactory.get_driver(config["browser"], config["headless_mode"])
     driver.implicitly_wait(config["timeout"])
+    base_api = config["base_URI"]
     request.cls.driver = driver
+    request.cls.base_api = base_api
     before_failed = request.session.testsfailed
     if config["browser"] is not None:
         driver.maximize_window()
@@ -49,3 +51,9 @@ def setup(request, config):
     if request.session.testsfailed != before_failed:
         allure.attach(driver.get_screenshot_as_png(), name="Test failed", attachment_type=AttachmentType.PNG)
     driver.quit()
+
+
+@pytest.fixture()
+def api(request, config):
+    base_uri = config["base_URI"]
+    request.cls.base_uri = base_uri

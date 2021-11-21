@@ -14,7 +14,6 @@ class TestAddProductToCart:
     def test_add_product_to_cart(self, config):
         app = InitAppPages(self.driver)
         expected_product_name = "Nike"
-
         app.home_page.open_page(config)
         app.navigate_bar.type_text_to_search(expected_product_name)
         app.navigate_bar.type_text_to_search("\n")
