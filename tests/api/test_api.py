@@ -16,4 +16,4 @@ class TestApi:
     def test_get_locations_for_us_check_country_equals_united_states(self):
         response = requests.get("http://api.zippopotam.us/us/90210")
         response_body = response.json()
-        assert response_body["country"] == "United States"
+        assert response_body["country"] == "United States" and response.status_code == 200
