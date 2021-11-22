@@ -5,7 +5,7 @@ from product.pages.init_app import InitAppPages
 
 
 @pytest.mark.smoke
-@pytest.mark.usefixtures("setup", "website_setup")
+@pytest.mark.usefixtures("setup")
 class TestCheckSearch:
     @allure.epic("Wildberries Trainee")
     @allure.title("Check search functionality")

@@ -108,7 +108,7 @@ def get_message_by_subject(subject_message):
 @allure.step("[Gmail Client] Delete all messages")
 def delete_all_messages():
     """
-    Delete all messages in gmail
+    Delete all messages in gmail account
     """
     service = __authorize()
     result = service.users().messages().list(userId='me').execute()

@@ -32,11 +32,6 @@ def wait_time_setup(config):
     return config['wait_time'] if 'wait_time' in config else DEFAULT_WAIT_TIME
 
 
-@pytest.fixture(scope='session')
-def website_setup(config):
-    return config['tested_page'] if 'tested_page' in config else Exception("Should be url in config file")
-
-
 @pytest.fixture()
 def setup(request, config):
     driver = DriverFactory.get_driver(config["browser"], config["headless_mode"])

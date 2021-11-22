@@ -11,8 +11,8 @@ from framework.listener.web_driver_listener import WebDriverListener
 from framework.utils.utils import get_project_root
 
 """
-This class helps us to get the browser object. Here uses the Factory pattern.
-This class contains a library called 'webdriver_manager' that helps to download the driver from the internet.
+This class needs to create and get driver object.
+The driver object helps us work with the browser.
 This class has only one static method.
 """
 
@@ -20,7 +20,8 @@ This class has only one static method.
 class DriverFactory:
     """
     This method helps us to get instance of browser.
-    You should pass two parameters: the first - the browser type in string format
+    You should pass two parameters:
+    the first - the browser type in string format,
     the second - the headless mod in the boolean format
     """
 
@@ -33,6 +34,7 @@ class DriverFactory:
                 options.add_argument("--headless")
             driver = EventFiringWebDriver(webdriver.Chrome(service=service, options=options), WebDriverListener())
             return driver
+
         elif browser == "firefox":
             options = webdriver.FirefoxOptions()
             service = ServiceFirefox(executable_path=GeckoDriverManager().install(),
@@ -43,6 +45,7 @@ class DriverFactory:
                 webdriver.Firefox(service=service, options=options),
                 WebDriverListener())
             return driver
+
         elif browser == "edge":
             options = webdriver.EdgeOptions()
             options.use_chromium = True
@@ -54,4 +57,5 @@ class DriverFactory:
                 WebDriverListener()
             )
             return driver
+
         raise Exception("Provide valid driver name")

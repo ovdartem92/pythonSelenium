@@ -1,10 +1,12 @@
 import allure
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 
 from framework.ui.components.wrappers.button import Button
 from framework.ui.components.wrappers.text_field import TextField
+
+"""
+This is a class-navigated bar. It is displayed on every page
+"""
 
 
 class NavigateBar:
