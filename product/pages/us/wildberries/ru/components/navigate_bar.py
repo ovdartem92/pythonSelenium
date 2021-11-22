@@ -9,8 +9,6 @@ from framework.ui.components.wrappers.text_field import TextField
 
 class NavigateBar:
     def __init__(self, driver):
-        if driver is None:
-            driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver = driver
 
     @allure.step("[Navigation Panel] Click burger menu")
