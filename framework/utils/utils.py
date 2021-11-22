@@ -11,7 +11,7 @@ def get_project_root() -> Path:
     return Path(__file__).parent.parent.parent
 
 
-def get_random_world():
+def get_random_word():
     """
     The method works through an api request.
     Receives a list of words and returns a random word.
@@ -23,4 +23,4 @@ def get_random_world():
 
 
 if __name__ == '__main__':
-    print(get_random_world())
+    print(get_random_word())
