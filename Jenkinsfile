@@ -1,9 +1,8 @@
 pipeline {
-    agent {label 'linux'}
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'pip install -r requirements.txt'
             }
         }
     }
