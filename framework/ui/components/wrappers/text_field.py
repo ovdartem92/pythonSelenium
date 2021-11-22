@@ -3,9 +3,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from framework.ui.components.common_page_element import CommonPageElement
 
-'''
+"""
 This is a wrapper class that wraps methods that can be used when working with a text field.
-'''
+"""
 
 
 class TextField(CommonPageElement):

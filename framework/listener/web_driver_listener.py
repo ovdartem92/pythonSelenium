@@ -7,10 +7,10 @@ from selenium.webdriver.support.events import AbstractEventListener
 
 from framework.utils.utils import get_project_root
 
-'''
+"""
 This class monitors all actions of the webDriver and logs it.
 After each new launch, reports will be overwritten.
-'''
+"""
 
 LOG_NAME = datetime.datetime.now().strftime("%d-%m-%Y__%H-%M-%S")
 REPORT_PATH = rf"{get_project_root()}\\report\\"
