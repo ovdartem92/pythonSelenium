@@ -4,11 +4,13 @@ import pytest
 from product.pages.init_app import InitAppPages
 
 
-@pytest.mark.smoke
+@pytest.mark.ui
+@pytest.mark.positive
 @pytest.mark.usefixtures("setup")
 class TestOpenFirstSearchResult:
     @allure.epic("Wildberries Trainee")
-    @allure.title("Open first search result and check product brand")
+    @allure.title("Check product brand in the first search result")
+    @allure.testcase("http://example.com/", "AM-6. Check product brand in the first search result")
     @allure.description("Open home page, type text to search field, open first search result, "
                         "check that brand as expected")
     @allure.severity(severity_level="MINOR")

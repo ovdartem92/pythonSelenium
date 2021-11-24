@@ -2,6 +2,7 @@
   "browser": "chrome",
   "headless_mode": false,
   "tested_page": "https://us.wildberries.ru/",
-  "base_URI" : "https://reqres.in",
-  "timeout": 10
+  "base_URI": "https://reqres.in",
+  "timeout": 10,
+  "wait_time": 3
 }

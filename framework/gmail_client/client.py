@@ -13,7 +13,7 @@ from googleapiclient.discovery import build
 from framework.utils.utils import get_project_root
 
 """
-This class is required for working with Google mail.
+This class is required to work with Google mail.
 """
 
 CONFIG_PATH = fr"{get_project_root()}\\framework\\gmail_client\\"
@@ -24,6 +24,7 @@ SCOPES = ['https://mail.google.com/']
 @allure.step("[Gmail Client] Authorize an gmail, return client")
 def __authorize():
     """
+    This is the main method that logs into the system and returns an object that has access to google mail.
     Shows basic usage of the Gmail API.
     """
     creds = None

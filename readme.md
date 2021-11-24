@@ -36,7 +36,17 @@ py.test
 ```
 py.test --alluredir report\allure
 ```
-## Get report: 
+## Get allure report: 
 ```
 allure serve report\allure
+```
+
+## Run only ui tests: 
+```
+pytest -v -m ui
+```
+
+## Run only api tests: 
+```
+pytest -v -m api
 ```

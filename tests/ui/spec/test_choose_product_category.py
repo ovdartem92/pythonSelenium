@@ -4,11 +4,13 @@ import pytest
 from product.pages.init_app import InitAppPages
 
 
+@pytest.mark.ui
+@pytest.mark.positive
 @pytest.mark.usefixtures("setup")
 class TestChooseProductCategory:
     @allure.epic("Wildberries Trainee")
     @allure.title("Check that user can enter to Clothes product category")
-    @allure.testcase("https://goldcast.atlassian.net/browse/AM-468", "Change product category")
+    @allure.testcase("http://example.com/", "AM-5. Check that user can enter to Clothes product category")
     @allure.description("Open home page, choose product category to For Women > Clothes, "
                         "check that the title on page is Clothes")
     @allure.severity(severity_level="CRITICAL")

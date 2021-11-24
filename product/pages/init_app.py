@@ -11,8 +11,7 @@ and allows us to use one object in tests to access all pages.
 
 class InitAppPages:
     def __init__(self, driver):
-        self.driver = driver
-        self.home_page = HomePage(self.driver)
-        self.catalog_page = CatalogPage(self.driver)
-        self.product_page = ProductPage(self.driver)
-        self.navigate_bar = NavigateBar(self.driver)
+        self.home_page = HomePage(driver)
+        self.catalog_page = CatalogPage(driver)
+        self.product_page = ProductPage(driver)
+        self.navigate_bar = NavigateBar(driver)

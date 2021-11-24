@@ -11,7 +11,7 @@ from framework.listener.web_driver_listener import WebDriverListener
 from framework.utils.utils import get_project_root
 
 """
-This class needs to create and get driver object.
+This class is required to create and get a driver object.
 The driver object helps us work with the browser.
 This class has only one static method.
 """
@@ -21,8 +21,8 @@ class DriverFactory:
     """
     This method helps us to get instance of browser.
     You should pass two parameters:
-    the first - the browser type in string format,
-    the second - the headless mod in the boolean format
+    the first - the browser type: in string format,
+    the second - the headless mode: in boolean format
     """
 
     @staticmethod

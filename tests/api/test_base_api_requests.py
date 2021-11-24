@@ -2,7 +2,10 @@ import allure
 import pytest
 import requests
 
+import framework.utils.utils as utils
 
+
+@pytest.mark.api
 @pytest.mark.usefixtures("api")
 class TestApi:
     @allure.epic("API Trainee")
@@ -28,8 +31,8 @@ class TestApi:
     @allure.title("POST. Create a User")
     def test_post_create_user(self):
         uri = self.base_uri + "/api/users"
-        name = "Morpheus"
-        job = "Leader"
+        name = utils.get_random_word()
+        job = utils.get_random_word()
         body = {
             "name": name,
             "job": job

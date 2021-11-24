@@ -5,11 +5,13 @@ from framework.browser.driver_factory import DriverFactory
 from product.pages.init_app import InitAppPages
 
 
-@pytest.mark.smoke
+@pytest.mark.ui
+@pytest.mark.positive
 @pytest.mark.usefixtures("setup")
 class TestOpenThreeBrowsersAndCheckTitleInEachInstance:
     @allure.epic("Wildberries Trainee")
-    @allure.title("Open three different browsers and check title in each instance")
+    @allure.title("Check cross browser functionality. Open three different browsers and check title in each instance")
+    @allure.testcase("http://example.com/", "AM-4. Check cross browser functionality")
     @allure.description("This test shows the possibilities of creating and working with different browsers in the test")
     @allure.severity(severity_level="MINOR")
     def test_check_title_in_different_browser(self, config):
@@ -20,7 +22,6 @@ class TestOpenThreeBrowsersAndCheckTitleInEachInstance:
         app_chrome = InitAppPages(driver_chrome)
         app_firefox = InitAppPages(driver_firefox)
         app_edge = InitAppPages(driver_edge)
-
         app_chrome.home_page.open_page(config)
         app_firefox.home_page.open_page(config)
         app_edge.home_page.open_page(config)
