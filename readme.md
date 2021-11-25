@@ -9,6 +9,10 @@
 8. Wrappers to Web Element
 9. Config.json with customizable parameters (Headless mode, Browser Type, Timeout)
 
+## Video review
+https://youtu.be/6Bktcj-juks
+
+
 ## Set-up environment
 Install python 3.9 https://www.python.org/downloads/release/python-390/
 
