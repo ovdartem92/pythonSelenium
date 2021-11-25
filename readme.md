@@ -16,8 +16,8 @@ Install some development environment, e.g. PyCharm https://www.jetbrains.com/pyc
 
 Clone this project via IDE.
 
-![img_1.png](manual/img.png)
-![img_2.png](manual/img_2.png)
+![img_1.png](framework/manual/img.png)
+![img_2.png](framework/manual/img_2.png)
 
 Install all dependency from requirements.txt. Command line can be opened by pressing keys: **Alt + F12**
 
@@ -25,7 +25,7 @@ Type to command line
 ```
 pip install -r requirements.txt
 ```
-![img_4.png](manual/img_4.png)
+![img_4.png](framework/manual/img_4.png)
 ## Run test
 Type to command line
 ```
