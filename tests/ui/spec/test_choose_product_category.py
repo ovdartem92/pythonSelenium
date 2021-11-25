@@ -22,4 +22,6 @@ class TestChooseProductCategory:
         app.navigate_bar.click_burger_menu()
         app.home_page.choose_product_category("For women")
         app.home_page.choose_product_category(expected_product_category)
-        assert expected_product_category == self.driver.title
+        actual_product_category = self.driver.title
+        assert expected_product_category == actual_product_category, \
+            f"Expected product category is {expected_product_category}, actual product category is {actual_product_category}"

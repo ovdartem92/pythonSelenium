@@ -31,4 +31,6 @@ class TestOpenThreeBrowsersAndCheckTitleInEachInstance:
         title_edge = app_edge.home_page.get_title()
         driver_firefox.quit()
         driver_edge.quit()
-        assert title_firefox == title_chrome == title_edge
+        assert title_firefox == title_chrome == title_edge, \
+            f"Titles should be the same. " \
+            f"Title firefox is {title_firefox}, title chrome is {title_chrome}, title edge is {title_edge}"

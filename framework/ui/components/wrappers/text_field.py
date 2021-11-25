@@ -1,14 +1,14 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from framework.ui.components.common_page_element import CommonPageElement
+from framework.ui.components.common_page_element import BaseWebElement
 
 """
 This is a wrapper class that wraps methods that can be used when working with a text field.
 """
 
 
-class TextField(CommonPageElement):
+class TextField(BaseWebElement):
     def __init__(self, driver, locator_type, locator):
         super().__init__(driver, locator_type, locator)
 

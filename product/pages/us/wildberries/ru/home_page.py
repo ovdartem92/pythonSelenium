@@ -23,7 +23,7 @@ class HomePage(BasePage):
     def check_home_page_opened(self, config):
         actual_url = self.driver.current_url
         expected_url = config["tested_page"]
-        assert actual_url == expected_url
+        assert actual_url == expected_url, f"Expected url is {expected_url}, actual url is {actual_url}"
 
     @allure.step("[Wildberries Home Page] Click I agree button")
     def click_agree_button(self):

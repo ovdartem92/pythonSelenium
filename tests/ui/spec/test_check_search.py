@@ -23,4 +23,6 @@ class TestCheckSearch:
         app.navigate_bar.type_text_to_search(Keys.ENTER)
         search_result = app.catalog_page.get_search_results()
         first_search_element = search_result[0].wrapped_element
-        assert search_result is not None and expected_brand in first_search_element.text
+        actual_brand = first_search_element.text
+        assert search_result is not None and expected_brand in actual_brand, \
+            f"The search result must contain at least one element and contains expected brand: {expected_brand}"

@@ -6,9 +6,8 @@
 5. Gmail Client
 6. Wed Driver Listener
 7. Page object, Factory patterns
-8. User model
-9. Wrappers to Web Element
-10. Config.json with customize parameters (Headless mode, Browser Type, Timeout)
+8. Wrappers to Web Element
+9. Config.json with customizable parameters (Headless mode, Browser Type, Timeout)
 
 ## Set-up environment
 Install python 3.9 https://www.python.org/downloads/release/python-390/

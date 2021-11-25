@@ -15,12 +15,13 @@ class TestOpenFirstSearchResult:
                         "check that brand as expected")
     @allure.severity(severity_level="MINOR")
     def test_open_first_search_result_and_check_brand(self, config):
+        expected_product_brand = "Nike"
         app = InitAppPages(self.driver)
-        expected_product_name = "Nike"
         app.home_page.open_page(config)
-        app.navigate_bar.type_text_to_search(expected_product_name)
+        app.navigate_bar.type_text_to_search(expected_product_brand)
         app.navigate_bar.type_text_to_search("\n")
         search_result = app.catalog_page.get_search_results()
         app.catalog_page.click_to_search_result_by_number_of_search(search_result, 0)
-        actual_product_name = app.product_page.get_product_brand()
-        assert expected_product_name == actual_product_name
+        actual_product_brand = app.product_page.get_product_brand()
+        assert expected_product_brand == actual_product_brand, \
+            f"Expected product brand is {expected_product_brand}, actual product brand is {actual_product_brand}"
