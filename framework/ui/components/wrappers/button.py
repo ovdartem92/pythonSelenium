@@ -2,7 +2,7 @@ from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from framework.ui.components.common_page_element import BaseWebElement
+from framework.ui.components.base_web_element import BaseWebElement
 
 """
 This is a wrapper class that wraps methods that can be used when working with a button.
